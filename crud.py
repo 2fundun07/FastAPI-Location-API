@@ -44,9 +44,8 @@ def filter(db: Session, name:str | None, longitude: float, latitude: float, max_
         query = query.filter(Distance <= max_dist)
     if(min_dist):
         query = query.filter(min_dist <= Distance)
-    if(query == []):
-        return None
-    return query
+        
+    return query.all()
     
     
     
