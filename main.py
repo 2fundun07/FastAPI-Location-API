@@ -55,6 +55,6 @@ def filter(q: Annotated[models.CommonQueryParams, Depends(models.CommonQueryPara
     
     result = crud.filter(db= db, name= q.name, longitude= q.longitude, latitude= q.latitude, max_dist = q.max_dist, min_dist= q.min_dist)
     if (result == []):
-        raise HTTPException(status_code=404, detail="No point is found") # it never applies this piece
+        raise HTTPException(status_code=404, detail="No point is found")
     return result      
         
